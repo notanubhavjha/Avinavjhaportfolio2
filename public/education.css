@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.glow-text {
+    font-size: 4rem; /* Adjusted font size for better responsiveness */
+    color: #d3d3d3;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure the elements wrap on smaller screens */
+}
+
+.glow-text i {
+    margin-right: 1rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.2rem;
+    background: #d3d3d3;
+    left: 50%;
+    margin-left: -0.1rem;
+}
+
+.timeline-item {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-item .timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 2rem;
+    background: #222;
+    color: #fff;
+    border-radius: 0.8rem;
+    text-align: left;
+    box-shadow: 0 0 1rem #d3d3d3;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: 55%;
+}
+
+.timeline-item h2 {
+    margin-top: 0;
+    color: #d3d3d3;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item h2 i {
+    margin-right: 1rem;
+}
+
+.timeline-item p {
+    margin: 0;
+    font-size: large;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 0 2rem #d3d3d3;
+}
+
+/* Back to Home button */
+.button-container {
+    margin-top: 4rem;
+}
+
+.back-to-home-button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border: 0.2rem solid #d3d3d3;
+    border-radius: 2rem;
+    color: #d3d3d3;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-to-home-button:hover {
+    background-color: #d3d3d3;
+    color: black;
+    box-shadow: 0 0 1rem #d3d3d3;
+    text-decoration: none;
+}
+
+/* Responsive adjustments for timeline and title */
+@media (max-width: 768px) {
+    .timeline-item .timeline-content {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .glow-text {
+        font-size: 3rem; /* Further adjust font size for small screens */
+    }
+
+    .glow-text i {
+        margin-right: 0.5rem;
+    }
+}
+
+.forensic {
+    color: red;
+}

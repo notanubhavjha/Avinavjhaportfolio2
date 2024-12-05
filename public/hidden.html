@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Development</title>
+    <link rel="stylesheet" href="maithalister.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">Developer's Terminal</span>
+        </div>
+        <div class="terminal-content">
+            <p id="line1">_Dev:Avinav_: development process is still in process...</p>
+            <p id="line2">_init_: Resources are still loading...</p>
+            <p id="line3">_init_: Source is open in github...</p>
+            <p id="line4">_init_: Please wait, the page is currently under development.</p>
+            <p class="cursor">_</p>
+        </div>
+        <button class="home-button" onclick="goHome()">Back to Home</button>
+    </div>
+
+    <script>
+        // JavaScript to create typing effect
+        const lines = [
+            '_Dev:Avinav_: development process is still in process...',
+            '_init_: Resources are still loading...',
+            '_init_: Source is open in github...',
+            '_init_: Please wait, the page is currently under development.'
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeLine() {
+            if (charIndex < lines[lineIndex].length) {
+                document.getElementById(`line${lineIndex + 1}`).textContent += lines[lineIndex][charIndex];
+                charIndex++;
+                setTimeout(typeLine, 100);
+            } else {
+                charIndex = 0;
+                lineIndex++;
+                if (lineIndex < lines.length) {
+                    setTimeout(typeLine, 500);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lines.forEach((line, index) => {
+                document.getElementById(`line${index + 1}`).textContent = '';
+            });
+            setTimeout(typeLine, 500);
+        });
+
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

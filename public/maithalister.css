@@ -1,0 +1,144 @@
+body {
+    background-color: #000; /* Black background */
+    color: #cccccc; /* Grey text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for terminal feel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.terminal {
+    border: 2px solid #cccccc; /* Grey border */
+    padding: 20px;
+    background-color: #222; /* Darker grey background for terminal */
+    box-shadow: 0 0 20px #cccccc, 0 0 40px #cccccc, 0 0 60px #cccccc; /* Glowing grey effect */
+    width: 90%;
+    max-width: 800px;
+    text-shadow: 0 0 10px #cccccc;
+    animation: flicker 1.5s infinite alternate;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensure button is at the bottom */
+}
+
+.terminal-header {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.terminal-title {
+    font-size: 1.5em;
+    color: #cccccc;
+}
+
+.terminal-content {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.terminal-content p {
+    margin: 0;
+    padding: 2px 0;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Additional Tweaks */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(204, 204, 204, 0.1), transparent);
+    mix-blend-mode: screen;
+    animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.terminal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(204, 204, 204, 0.2), transparent);
+    mix-blend-mode: screen;
+}
+
+/* Glitch Effect */
+.terminal::before,
+.terminal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 600"><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="50%" y1="0" x2="50%" y2="100%"><stop stop-color="#CCCCCC" offset="0"/><stop stop-color="#CCCCCC" stop-opacity="0.8" offset="0.25"/><stop stop-color="#CCCCCC" stop-opacity="0.5" offset="0.5"/><stop stop-color="#CCCCCC" stop-opacity="0.2" offset="0.75"/><stop stop-color="#CCCCCC" stop-opacity="0" offset="1"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#a)" /></svg>');
+    mix-blend-mode: color-dodge;
+    animation: glitch 3s steps(5, end) infinite;
+}
+
+@keyframes glitch {
+    0% { clip: rect(24px, 9999px, 70px, 0); transform: translate(20px, -10px); }
+    10% { clip: rect(12px, 9999px, 64px, 0); transform: translate(-10px, 10px); }
+    20% { clip: rect(32px, 9999px, 44px, 0); transform: translate(10px, -5px); }
+    30% { clip: rect(0px, 9999px, 90px, 0); transform: translate(-5px, 5px); }
+    40% { clip: rect(54px, 9999px, 100px, 0); transform: translate(5px, -20px); }
+    50% { clip: rect(30px, 9999px, 50px, 0); transform: translate(-20px, 5px); }
+    60% { clip: rect(16px, 9999px, 56px, 0); transform: translate(20px, -15px); }
+    70% { clip: rect(22px, 9999px, 60px, 0); transform: translate(-15px, 20px); }
+    80% { clip: rect(26px, 9999px, 66px, 0); transform: translate(15px, -10px); }
+    90% { clip: rect(12px, 9999px, 72px, 0); transform: translate(-10px, 10px); }
+    100% { clip: rect(8px, 9999px, 78px, 0); transform: translate(10px, -15px); }
+}
+
+.home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #cccccc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #cccccc;
+    box-shadow: 0 0 10px #cccccc;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #000;
+    color: #cccccc;
+    box-shadow: 0 0 20px #cccccc;
+}

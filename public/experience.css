@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Slightly lighter black */
+    color: #d3d3d3; /* Light grey text */
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.glow-text {
+    font-size: 5rem;
+    color: #d3d3d3; /* Light grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-text i {
+    margin-right: 1rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.2rem;
+    background: #d3d3d3; /* Light grey */
+    left: 50%;
+    margin-left: -0.1rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline-item .timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 2rem;
+    background: #222; /* Dark grey */
+    color: #d3d3d3; /* Light grey text */
+    border-radius: 0.8rem;
+    text-align: left;
+    box-shadow: 0 0 1rem #d3d3d3; /* Light grey */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: -2%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: calc(52%);
+}
+
+#WLHC {
+    text-decoration: none;
+    color: #ff0000;
+}
+
+.timeline-item h2 {
+    color: #d3d3d3; /* Light grey */
+    font-size: large;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 0 2rem #d3d3d3; /* Light grey */
+}
+
+/* Back to Home button */
+.button-container {
+    margin-top: 4rem;
+}
+
+.back-to-home-button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: #121212; /* Slightly lighter black */
+    border: 0.2rem solid #d3d3d3; /* Light grey */
+    border-radius: 2rem;
+    color: #d3d3d3; /* Light grey */
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.back-to-home-button:hover {
+    background-color: #d3d3d3; /* Light grey */
+    color: #121212; /* Slightly lighter black */
+    box-shadow: 0 0 1rem #d3d3d3; /* Light grey */
+}
+
+/* Responsive adjustments for timeline */
+@media (max-width: 768px) {
+    .timeline-item .timeline-content {
+        width: 100%;
+        left: 5% !important;
+    }
+}
